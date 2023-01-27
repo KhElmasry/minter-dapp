@@ -14,7 +14,7 @@ const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 const layerConfigurations = [
   {
     // 1-1 (7-7)
-    growEditionSizeTo: 99,
+    growEditionSizeTo: 33,
     layersOrder: [
     {name: "1-Background",
         options: {displayName: "Background",},},
@@ -124,7 +124,7 @@ const solanaMetadata = {
 };
 
 const gif = {
-  export: true,
+  export: false,
   repeat: 0,
   quality: 100,
   delay: 500,
