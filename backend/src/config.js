@@ -7,21 +7,41 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "YOUR COLLECTION NAME";
-const description = "Remember to replace this description";
+const namePrefix = "Lazy Test";
+const description = "Cat Collection";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    // 1-1 (7-7)
+    growEditionSizeTo: 99,
     layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
+    {name: "1-Background",
+        options: {displayName: "Background",},},
+		
+	{name: "2-Fur Color",
+        options: {displayName: "Fur Color",},},
+		
+	{name: "3-Clothes(1) Anger MS",
+        options: {displayName: "Clothes",},},
+	
+	{name: "4-Eye Shape(1) Anger ES",
+        options: {displayName: "Eye Shape",},},
+		
+	{name: "5-Facial Marks",
+        options: {displayName: "Facial Marks",},},
+		
+	{name: "6-Eye Addons(1) Anger ES",
+        options: {displayName: "Eye Addons",},},
+		
+	{name: "7-Mouth Shape(1) Anger MS",
+        options: {displayName: "Mouth Shape",},},
+		
+	{name: "8-Head Addons",
+        options: {displayName: "Head Addons",},},
+	
+	{name: "9-Mouth Addons(1) Anger MS",
+        options: {displayName: "Mouth Addons",},},
     ],
   },
 ];
@@ -31,13 +51,13 @@ const shuffleLayerConfigurations = true;
 const debugLogs = false;
 
 const format = {
-  width: 512,
-  height: 512,
-  smoothing: false,
+  width: 1500,
+  height: 1500,
+  smoothing: true,
 };
 
 const extraMetadata = {
-  external_url: "https://codecats.xyz", // Replace with your website or remove this line if you do not have one.
+  external_url: "https://lazycat.test", // Replace with your website or remove this line if you do not have one.
 };
 
 // NFTPort Info
@@ -45,25 +65,25 @@ const extraMetadata = {
 // ** REQUIRED **
 const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
 const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'goerli'; // only goerli, polygon, or ethereum
+const CHAIN = 'Goerli'; // only goerli, polygon, or ethereum
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'CRYPTOPUNKS';
-const CONTRACT_SYMBOL = 'CP';
-const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
-const OWNER_ADDRESS = 'YOUR WALLET ADDRESS HERE';
-const TREASURY_ADDRESS = 'YOUR WALLET ADDRESS HERE';
+const CONTRACT_NAME = 'Lazy Test';
+const CONTRACT_SYMBOL = 'LT';
+const METADATA_UPDATABLE = false; // set to false if you don't want to allow metadata updates after minting
+const OWNER_ADDRESS = '0x1364A8947A5aF3636d7F090dcc884109D4Ab4551';
+const TREASURY_ADDRESS = '0x1364A8947A5aF3636d7F090dcc884109D4Ab4551';
 const MAX_SUPPLY = 5000; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 0.01; // Minting price per NFT. Goerli = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
-const TOKENS_PER_MINT = 10; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
+const MINT_PRICE = 0.001; // Minting price per NFT. Goerli = ETH, Ethereum = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const TOKENS_PER_MINT = 3; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-03-20T11:30:48+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2023-01-27T15:00:00+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
 const PRESALE_MINT_START_DATE = null; // Optional. Eg: 2022-02-08T11:30:48+00:00
-const ROYALTY_SHARE = 1000; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
-const ROYALTY_ADDRESS = "0xd8B808A887326F45B2D0cd999709Aa6264CeF919"; // Address that will receive the royalty
+const ROYALTY_SHARE = 700; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
+const ROYALTY_ADDRESS = "0x1364A8947A5aF3636d7F090dcc884109D4Ab4551"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
 const PRESALE_WHITELISTED_ADDRESSES = []; // only update if you want to manually set the whitelisted addresses
@@ -128,7 +148,7 @@ const pixelFormat = {
 };
 
 const background = {
-  generate: true,
+  generate: false,
   brightness: "80%",
   static: false,
   default: "#000000",
