@@ -14,7 +14,7 @@ const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 const layerConfigurations = [
   {
     // 1-1 (7-7)
-    growEditionSizeTo: 33,
+    growEditionSizeTo: 10,
     layersOrder: [
     {name: "1-Background",
         options: {displayName: "Background",},},
@@ -78,7 +78,7 @@ const MINT_PRICE = 0.001; // Minting price per NFT. Goerli = ETH, Ethereum = ETH
 const TOKENS_PER_MINT = 3; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2023-01-27T15:00:00+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2023-01-27T09:00:00+00:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
 const PRESALE_MINT_START_DATE = null; // Optional. Eg: 2022-02-08T11:30:48+00:00
