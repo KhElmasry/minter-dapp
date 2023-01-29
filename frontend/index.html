@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <style>
-        body {
-            background-image: url("/images/Naive1");
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100vh;
-        }
-    </style>
+      body {
+        background-image: url("/images/Naive1");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+      }
+    </style>    
     <meta charset="UTF-8">
     <title>My NFT Website</title>
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"></script>
     <script src="./index.js"></script>
-</head>
+  </head>
+  <body>
+    <img src="/images/Naive1.jpg" alt="Image">
+    <button id="mint-button">Mint NFT</button>
+    <label for="nft-count">Number of NFTs:</label>
+    <input id="nft-count" type="number" min="1">
+  </body>
+</html>
