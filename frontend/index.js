@@ -29,4 +29,4 @@ mintButton.addEventListener("click", async function() {
     
   // Add code here to connect to your smart contract and mint NFTs
 });
-import Web3 from "web3";
+const Web3 = require("web3");
