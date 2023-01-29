@@ -1,4 +1,4 @@
-import Web3, { providers } from 'web3';
+const Web3 = require('web3');
 const web3 = new Web3(new providers.HttpProvider("https://goerli.infura.io/v3/YOUR-PROJECT-ID"));
 
 // Define the ABI (Application Binary Interface) of your smart contract
