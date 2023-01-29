@@ -1,23 +1,23 @@
 {
-  "name": "nft-landing-page",
-  "version": "1.1.0",
-  "description": "Landing page to be used with an NFTPort Collection Contract",
-  "main": "index.html",
+  "name": "web3app",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codeSTACKr/nft-landing-page.git"
-  },
-  "keywords": [],
-  "author": "Jesse Hall (codeSTACKr)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/codeSTACKr/nft-landing-page/issues"
-  },
-  "homepage": "https://github.com/codeSTACKr/nft-landing-page#readme",
   "dependencies": {
-    "node-fetch": "^2.6.7"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.4",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.4.2",
+    "@vitejs/plugin-react": "^1.0.7",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.5.3",
+    "vite": "^2.7.2"
   }
 }

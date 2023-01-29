@@ -1,5 +1,14 @@
 node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+node_modules
 .env
-package-lock.json
-# Local Netlify folder
-.netlify
+coverage
+coverage.json
+typechain
+
+#Hardhat files
+cache
+artifacts
