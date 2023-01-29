@@ -1,7 +1,8 @@
 if (typeof window.ethereum !== "undefined") {
     const web3 = new Web3(window.ethereum);
-    await window.ethereum.enable();
-    // ...
+    window.ethereum.enable().then(async () => {
+      // Your code with the `await` keyword here
+    });
   } else {
     console.error("Please install MetaMask to use this website");
   }
