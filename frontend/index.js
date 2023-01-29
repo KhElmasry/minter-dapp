@@ -1,3 +1,11 @@
+if (typeof window.ethereum !== "undefined") {
+    const web3 = new Web3(window.ethereum);
+    await window.ethereum.enable();
+    // ...
+  } else {
+    console.error("Please install MetaMask to use this website");
+  }
+  
 const mintButton = document.getElementById("mint-button");
 const nftCountInput = document.getElementById("nft-count");
 
