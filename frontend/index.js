@@ -1,8 +1,12 @@
 window.addEventListener('load', async () => {
     if (window.ethereum) {
+      window.ethereum.autoRefreshOnNetworkChange = false;
       window.web3 = new Web3(window.ethereum);
       try {
-        await window.ethereum.enable();
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+        window.ethereum.on('accountsChanged', function (accounts) {
+          location.reload();
+        });
       } catch (error) {
         console.error(error);
       }
@@ -24,20 +28,24 @@ window.addEventListener('load', async () => {
     const nftCount = nftCountInput.value;
     const contractAddress = "0xF8402BE77548A298F6Ef979f5AAd90573cfC99A0";
     const contract = new window.web3.eth.Contract(abi, contractAddress);
-    
-    await window.ethereum.enable();
-    // Call the "mint" function of your contract
-    contract.methods
-      .mint(nftCount)
-      .send({ from: window.web3.eth.defaultAccount })
-      .on("transactionHash", function(transactionHash) {
-        console.log("Transaction hash:", transactionHash);
-      })
-      .on("confirmation", function(confirmationNumber, receipt) {
-        console.log("Confirmation number:", confirmationNumber);
-      })
-      .on("receipt", function(receipt) {
-        console.log("Receipt:", receipt);
-      });
+  
+    try {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      // Call the "mint" function of your contract
+      contract.methods
+        .mint(nftCount)
+        .send({ from: accounts[0] })
+        .on("transactionHash", function(transactionHash) {
+          console.log("Transaction hash:", transactionHash);
+        })
+        .on("confirmation", function(confirmationNumber, receipt) {
+          console.log("Confirmation number:", confirmationNumber);
+        })
+        .on("receipt", function(receipt) {
+          console.log("Receipt:", receipt);
+        });
+    } catch (error) {
+      console.error(error);
+    }
   });
   
