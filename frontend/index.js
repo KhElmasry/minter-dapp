@@ -1,33 +1,38 @@
-import Web3 from 'web3';
-
-if (typeof window.ethereum !== "undefined") {
-    const web3 = new Web3(window.ethereum);
-    window.ethereum.enable().then(async () => {
-      // Your code with the `await` keyword here
-    });
-  } else {
-    console.error("Please install MetaMask to use this website");
+const Web3 = require('web3');
+const abi = [
+  {
+    // Contract ABI here
   }
-  
+];
+
+window.addEventListener('load', async () => {
+  if (window.ethereum) {
+    window.web3 = new Web3(window.ethereum);
+    try {
+      await window.ethereum.enable();
+    } catch (error) {
+      console.error(error);
+    }
+  } else if (window.web3) {
+    window.web3 = new Web3(window.web3.currentProvider);
+  } else {
+    console.error('Non-Ethereum browser detected. You should consider trying MetaMask!');
+  }
+});
+
 const mintButton = document.getElementById("mint-button");
 const nftCountInput = document.getElementById("nft-count");
 
 mintButton.addEventListener("click", async function() {
   const nftCount = nftCountInput.value;
-  const web3 = new Web3(window.ethereum);
-  await window.ethereum.enable();
   const contractAddress = "0xF8402BE77548A298F6Ef979f5AAd90573cfC99A0";
-  const abi = [
-    {
-      // Contract ABI here
-    }
-  ];
-  const contract = new web3.eth.Contract(abi, contractAddress);
+  const contract = new window.web3.eth.Contract(abi, contractAddress);
   
+  await window.ethereum.enable();
   // Call the "mint" function of your contract
   contract.methods
     .mint(nftCount)
-    .send({ from: web3.eth.defaultAccount })
+    .send({ from: window.web3.eth.defaultAccount })
     .on("transactionHash", function(transactionHash) {
       console.log("Transaction hash:", transactionHash);
     })
@@ -37,8 +42,4 @@ mintButton.addEventListener("click", async function() {
     .on("receipt", function(receipt) {
       console.log("Receipt:", receipt);
     });
-    
-  // Add code here to connect to your smart contract and mint NFTs
 });
-const Web3 = require("web3");
-import Web3 from "web3";
