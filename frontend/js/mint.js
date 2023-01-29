@@ -1,4 +1,5 @@
 // Import the web3.js library
+import Web3 from 'web3';
 const Web3 = require('web3');
 
 // Connect to the Goerli test network through Infura
