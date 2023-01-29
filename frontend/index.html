@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Cat NFT Website</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <style>
+      body {
+        background-image: url('Almond#1165.png');
+        background-size: cover;
+      }
+    </style>
+    
+    <title>My NFT Website</title>
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#mint">Mint</a></li>
-        </ul>
-      </nav>
+      <!-- header content here -->
     </header>
     <main>
-      <section id="home">
-        <h1>Welcome to My Cat NFT Website</h1>
-        <p>Here you can buy, sell, and mint your own unique cat NFTs.</p>
-      </section>
-      <section id="about">
-        <h2>About Us</h2>
-        <p>We are a team of cat lovers who are passionate about NFTs and blockchain technology.</p>
-      </section>
-      <section id="mint">
-        <h2>Mint Your Own Cat NFT</h2>
-        <form>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-          <label for="image">Image:</label>
-          <input type="file" id="image" name="image" accept="image/*" required>
-          <button type="submit" id="mint-button">Mint</button>
-        </form>
-      </section>
+      <button id="mint-button">Mint NFT</button>
+      <div id="input-container">
+        <label for="nft-count">Number of NFTs:</label>
+        <input type="number" id="nft-count">
+      </div>
+      <button id="connect-wallet-button">Connect Wallet</button>      
+      <!-- main content here -->
     </main>
     <footer>
-      <p>Copyright © 2021 My Cat NFT Website</p>
+      <!-- footer content here -->
     </footer>
-    <script src="js/main.js"></script>
-    <script src="js/mint.js"></script>
-    <script src="./js/mint-compiled.js"></script>
-    <script src="dist/bundle.js"></script>
   </body>
 </html>
