@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
