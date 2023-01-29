@@ -1,8 +1,5 @@
-// Import the web3.js library
-const Web3 = require('web3');
-
-// Connect to the Goerli test network through Infura
-const web3 = new Web3(new Web3.providers.HttpProvider("https://goerli.infura.io/v3/YOUR-PROJECT-ID"));
+import Web3, { providers } from 'web3';
+const web3 = new Web3(new providers.HttpProvider("https://goerli.infura.io/v3/YOUR-PROJECT-ID"));
 
 // Define the ABI (Application Binary Interface) of your smart contract
 const abi = [
