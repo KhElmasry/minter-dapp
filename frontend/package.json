@@ -1,46 +1,23 @@
 {
-  "name": "full-mint-website",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@chakra-ui/react": "^2.4.9",
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@openzeppelin/contracts": "^4.8.1",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "framer-motion": "^8.5.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^2.1.3",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "nft-landing-page",
+  "version": "1.1.0",
+  "description": "Landing page to be used with an NFTPort Collection Contract",
+  "main": "index.html",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeSTACKr/nft-landing-page.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "Jesse Hall (codeSTACKr)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codeSTACKr/nft-landing-page/issues"
   },
-  "devDependencies": {
-    "hardhat": "^2.12.6"
+  "homepage": "https://github.com/codeSTACKr/nft-landing-page#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
   }
 }
