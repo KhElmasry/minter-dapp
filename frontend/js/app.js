@@ -209,18 +209,11 @@ async function loadInfo() {
     actionButton.innerText = button_presale_coming_soon;
   }
 
-  const clockdiv = document.getElementById("countdown");
-  clockdiv.setAttribute("data-date", startTime);
-  countdown();
 
   // HIDE SPINNER
   spinner.classList.add('hidden');
 
   // SHOW CARD
-  setTimeout(() => {
-    const countdownCard = document.querySelector('.countdown');
-    countdownCard.classList.add('show-card');
-  }, 1000);
 
   let priceType = '';
   if(chain === 'goerli' || chain === 'ethereum') {
@@ -320,10 +313,8 @@ async function mint() {
         if(chain === 'goerli') {
           const url = `https://goerli.etherscan.io/tx/${mintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
-          const countdownContainer = document.querySelector('.countdown');
           const mintedTxnBtn = document.getElementById("mintedTxnBtn");
           mintedTxnBtn.href = url;
-          countdownContainer.classList.add('hidden');
           mintedContainer.classList.remove('hidden');
         }
         console.log("Minted successfully!", `Transaction Hash: ${mintTransaction.transactionHash}`);
@@ -357,10 +348,8 @@ async function mint() {
         if(chain === 'goerli') {
           const url = `https://goerli.etherscan.io/tx/${presaleMintTransaction.transactionHash}`;
           const mintedContainer = document.querySelector('.minted-container');
-          const countdownContainer = document.querySelector('.countdown');
           const mintedTxnBtn = document.getElementById("mintedTxnBtn");
           mintedTxnBtn.href = url;
-          countdownContainer.classList.add('hidden');
           mintedContainer.classList.remove('hidden');
         }
         console.log("Minted successfully!", `Transaction Hash: ${presaleMintTransaction.transactionHash}`);
